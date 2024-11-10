@@ -1,0 +1,188 @@
+:root {
+    --primary-bg: #ffffff;
+    --secondary-bg: #f8f9fa;
+    --text-color: #333333;
+    --border-color: #e1e4e8;
+    --button-hover: #e0e0e0;
+    --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --button-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] {
+    --primary-bg: #121212;
+    --secondary-bg: #1e1e1e;
+    --text-color: #ffffff;
+    --border-color: #2d2d2d;
+    --button-hover: #2d2d2d;
+    --card-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    --button-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Google Sans', 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+header {
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.header-controls {
+    display: flex;
+    gap: 16px;
+}
+
+.add-motor-section {
+    background: var(--secondary-bg);
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    box-shadow: var(--card-shadow);
+}
+
+input[type="text"] {
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: var(--primary-bg);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+input[type="color"] {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--button-shadow);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.primary-button {
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    color: white;
+}
+
+.danger-button {
+    background: linear-gradient(135deg, #ea4335, #fbbc05);
+    color: white;
+}
+
+.success-button {
+    background: linear-gradient(135deg, #34a853, #4285f4);
+    color: white;
+}
+
+.motor-card {
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.motor-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.motor-card h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.timer {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+    font-variant-numeric: tabular-nums;
+}
+
+.motor-controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+#darkModeToggle {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary-bg);
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .header-controls {
+        flex-wrap: wrap;
+    }
+    
+    .add-motor-section {
+        flex-direction: column;
+        padding: 16px;
+    }
+    
+    .motor-card {
+        padding: 16px;
+    }
+    
+    .timer {
+        font-size: 2rem;
+    }
+} 
